@@ -407,7 +407,8 @@ final class Image implements ImageInterface
                 $thumbnail->imagick->thumbnailImage(
                     $size->getWidth(),
                     $size->getHeight(),
-                    true
+                    true,
+                    $size->getWidth() === $size->getHeight()
                 );
             } elseif ($mode === ImageInterface::THUMBNAIL_OUTBOUND) {
                 $thumbnail->imagick->cropThumbnailImage(
